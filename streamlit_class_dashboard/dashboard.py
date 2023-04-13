@@ -160,16 +160,3 @@ class Dashboard:
     def clear_instance(self) -> None:
         st.session_state[f"create_dashboard_{self.cls.__name__}_instance"] = None
 
-
-@Dashboard
-class Dinosaur:
-    def __init__(self, name: str = "T-Rex", speed: float = 30.0, age: int = 65_000_000):
-        self.name = name
-        self.speed = speed
-        self.age = age
-
-    def roar(self, volume: int = 100) -> str:
-        return f"{self.name} roars at volume {volume} dB!"
-
-    def run(self, distance: float = 100.0) -> str:
-        return f"{self.name} runs {distance} meters in {distance / self.speed} seconds!"

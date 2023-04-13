@@ -7,7 +7,7 @@
 - Automatically generate Streamlit dashboards for your Python classes.
 - Supports int, float, and str types for arguments and return values.
 - Handles default values and optional arguments.
-- Easy to use with the `create_dashboard` decorator.
+- Easy to use with the `Dashboard` decorator.
 
 ## Getting Started
 
@@ -22,17 +22,17 @@ Here's a basic example to get you started:
 from streamlit_class_dashboard import Dashboard
 
 @Dashboard
-class Vehicle:
-    def __init__(self, make: str = "Toyota", model: str = "Camry", year: int = 2022):
-        self.make = make
-        self.model = model
-        self.year = year
+class Dinosaur:
+    def __init__(self, name: str = "T-Rex", speed: float = 30.0, age: int = 65_000_000):
+        self.name = name
+        self.speed = speed
+        self.age = age
 
-    def display_info(self) -> str:
-        return f"{self.make} {self.model} ({self.year})"
+    def roar(self, volume: int = 100) -> str:
+        return f"{self.name} roars at volume {volume} dB!"
 
-    def age(self, current_year: int = 2023) -> int:
-        return current_year - self.year
+    def run(self, distance: float = 100.0) -> str:
+        return f"{self.name} runs {distance} meters in {distance / self.speed} seconds!"
 ```
 
 This will create a dashboard with input fields for the `Vehicle` class attributes and methods. You can interact with the dashboard, see the results of the methods, and modify the inputs with default values.
